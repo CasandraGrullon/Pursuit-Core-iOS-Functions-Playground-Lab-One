@@ -5,7 +5,10 @@ import UIKit
 // Write a function named double(_:) that takes in a Double and returns that number times two
 
 // Your function here
-
+func double(_ num: Double) -> Double {
+let output = num * 2
+return(output)
+}
 
 let testCasesOne: [(Double, Double)] = [
     (input: 3.0, expectedOutput: 6.0),
@@ -14,15 +17,11 @@ let testCasesOne: [(Double, Double)] = [
     (input: 99, expectedOutput: 198)
 ]
 
-func doubled(double x: Double) -> Double {
-    return x * 2.0
+
+for (input, expectedOutput) in testCasesOne {
+    let output = double(input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
 }
-
-//for (input, expectedOutput) in testCasesOne {
-//    let output = double(input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
-
 
 
 // Question Two
@@ -30,6 +29,16 @@ func doubled(double x: Double) -> Double {
 // Write a function named smallest(of:and:) that takes in two Doubles and returns the smaller number
 
 // Your function here
+func smallest(of x: Double, and y: Double) -> Double {
+    var result = Double(0)
+    if x > y {
+    result = y
+    }
+    else {
+    result = x
+}
+    return result
+}
 
 let testCasesTwo: [(Double, Double, Double)] = [
     (inputOne: 8.0, inputTwo: 3.0, expectedOutput: 3.0),
@@ -38,10 +47,10 @@ let testCasesTwo: [(Double, Double, Double)] = [
     (inputOne: 2.3, inputTwo: 2.03, expectedOutput: 2.03)
 ]
 
-//for (inputOne, inputTwo, expectedOutput) in testCasesTwo {
-//    let output = smallest(of: inputOne, and: inputTwo)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
-//}
+for (inputOne, inputTwo, expectedOutput) in testCasesTwo {
+    let output = smallest(of: inputOne, and: inputTwo)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
+}
 
 // Question Three
 
